@@ -8,8 +8,7 @@
 body {
     font-family: 'Geneva', sans-serif;
   }
-  
-  
+
   .hero-section {
     background-image: linear-gradient(
         to bottom, 
@@ -163,8 +162,8 @@ body {
   }
   #reviews{
   
-    background: radial-gradient(circle, rgb(2, 2, 46) 30%, black 90%);
-  
+    background: linear-gradient(to bottom, #104947, #0a0303);
+    
   }
   /* General section styling */
   #reviews {
@@ -206,12 +205,7 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
   }
   
-  /* Box hover effect */
-  .box:hover {
-    transform: translateY(-5px); /* Slightly lift the box on hover */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
-  }
-  
+
   /* Review image styles */
   .rev-img img {
     border-radius: 50%;
@@ -257,7 +251,8 @@ body {
   
   /* Footer container styling */
   .div-footer {
-    background-color: #003366; /* Dark blue background */
+    background-color: #0b3633; /* Dark blue background */
+     /* Dark blue background */
     padding: 20px 0; /* Padding for top and bottom */
     color: #fff;
   }
@@ -285,7 +280,8 @@ body {
   
   /* Darker background with black for the footer */
   .div-footer {
-    background: linear-gradient(to bottom, #003366, #000); /* Dark blue to black gradient */
+    /* background: linear-gradient(to bottom, #003366, #000); */
+    background: linear-gradient(to bottom, #104947, #0a0303);/* Dark blue to black gradient */
     color: #fff; /* Text color set to white */
     padding: 20px;
   }
