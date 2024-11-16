@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RouterOutlet } from '@angular/router';
 import { ReviewComponent } from './review/review.component';
+import { CustomerComponent } from './customer/customer.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ReviewComponent } from './review/review.component';
     BlankComponent,
     LoginComponent,
     RegisterComponent,
-    ReviewComponent
+    ReviewComponent,
+    CustomerComponent
   ],
   imports: [
     BrowserModule,
