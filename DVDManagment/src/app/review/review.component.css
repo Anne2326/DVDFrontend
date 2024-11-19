@@ -1,9 +1,5 @@
 
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-} */
+
 
 body {
     font-family: 'Geneva', sans-serif;
@@ -21,21 +17,12 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    /* justify-content: center;
-    align-items: center;
-    text-align: center; */
+    
     color: white;
-    /* - */
+   
   }
   
-  /* .header {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #fff;
-    position: absolute;
-    top: 10px;
-    /* left: 20px; */
-   
+  
   
   
   h1.display-1 {
@@ -73,7 +60,7 @@ body {
     background-color: darkred;
   }
   
-  /* Carousel */
+  
   .carousel-container {
     margin-top: 50px;
   }
@@ -88,17 +75,18 @@ body {
   .image-cards-container {
     display: flex;
     overflow-x: auto;
-    gap: 25px; /* Space between cards */
+    gap: 25px;
     padding: 50px;
     margin-left: 5px;
     cursor: pointer;
     /* cursor: -webkit-zoom-out; */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
-  
+
   .image-card {
     flex: 0 0 auto;
-    width: 200px; /* or any desired width */
+    width: 200px;
     border-radius: 8px;
     box-shadow: 2px 4px 6px rgba(203, 199, 199, 0.1);
     background: #fff;
@@ -110,7 +98,7 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 8px 8px 8px 8px;
-    /* height: 150px; */
+  
     object-fit: cover;
   }
   
@@ -162,13 +150,15 @@ body {
   }
   #reviews{
   
-    background: linear-gradient(to bottom, #104947, #0a0303);
+    background: linear-gradient(to bottom, #13043e, #0a0303);
     
   }
   /* General section styling */
   #reviews {
     padding: 40px;
-    background-color: #333; /* Dark background for contrast */
+    background-color: #333;
+    
+
   }
   
   h1 {
@@ -202,9 +192,11 @@ body {
     width: 380px; /* Set width of the review box */
     text-align: center;
     color:white;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+   /* Smooth transition for hover effect */
   }
-  
+  .box:hover{
+   
+  }
 
   /* Review image styles */
   .rev-img img {
@@ -251,7 +243,7 @@ body {
   
   /* Footer container styling */
   .div-footer {
-    background-color: #0b3633; /* Dark blue background */
+    background-color: #170934; /* Dark blue background */
      /* Dark blue background */
     padding: 20px 0; /* Padding for top and bottom */
     color: #fff;
@@ -281,7 +273,7 @@ body {
   /* Darker background with black for the footer */
   .div-footer {
     /* background: linear-gradient(to bottom, #003366, #000); */
-    background: linear-gradient(to bottom, #104947, #0a0303);/* Dark blue to black gradient */
+    background: linear-gradient(to bottom, #13043e, #0a0303);/* Dark blue to black gradient */
     color: #fff; /* Text color set to white */
     padding: 20px;
   }
@@ -314,3 +306,9 @@ body {
     }
   }
   
+  .image-card:hover{
+
+transform: scale(1.05);
+box-shadow: 0 12px 24px rgba(112, 104, 104, 0.4);
+
+  }

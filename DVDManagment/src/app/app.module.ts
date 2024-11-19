@@ -3,19 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserComponent } from './layout/user/user.component';
+
 import { AdminComponent } from './layout/admin/admin.component';
 import { BlankComponent } from './layout/blank/blank.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { ReviewComponent } from './review/review.component';
 import { CustomerComponent } from './customer/customer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent,
+
     AdminComponent,
     BlankComponent,
     LoginComponent,
@@ -26,7 +28,7 @@ import { CustomerComponent } from './customer/customer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterOutlet
+    RouterOutlet,FormsModule,ReactiveFormsModule,CommonModule,RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
