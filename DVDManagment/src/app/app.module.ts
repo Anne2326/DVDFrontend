@@ -13,6 +13,7 @@ import { ReviewComponent } from './review/review.component';
 import { CustomerComponent } from './customer/customer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { CustomersComponent } from './layout/admin/customers/customers.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CommonModule } from '@angular/common';
     LoginComponent,
     RegisterComponent,
     ReviewComponent,
-    CustomerComponent
+    CustomerComponent,
+    CustomersComponent
   ],
   imports: [
     BrowserModule,

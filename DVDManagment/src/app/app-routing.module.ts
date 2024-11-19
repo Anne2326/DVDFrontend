@@ -5,9 +5,17 @@ import { BlankComponent } from './layout/blank/blank.component';
 import { ReviewComponent } from './review/review.component';
 import { CustomerComponent } from './customer/customer.component';
 import { RegisterComponent } from './register/register.component';
+import { AdminComponent } from './layout/admin/admin.component';
 
 const routes: Routes = [
+  {path:'admin',component:AdminComponent, 
+    children:[{
+      path:'customer'
+    }]
+  },
+
   {
+    
     path: '',
     component: BlankComponent,
     children: [
@@ -22,8 +30,7 @@ const routes: Routes = [
         path: 'register',  
         component: RegisterComponent
       },
-      {path:'customer',component:CustomerComponent}
-     
+      {path:'customer',component:CustomerComponent},
     ]
   },
 
