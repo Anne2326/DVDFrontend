@@ -3,3 +3,9 @@
     color: #f90404; /* Red color */
     font-size: 1.2em; /* Slightly larger font size for emphasis */
 }
+
+.btn:hover{
+background-color: red;
+}
+
+

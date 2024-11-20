@@ -12,7 +12,8 @@ export class AdminComponent {
 dvds: any[]=[];
 customers: any[]=[];
 
-showDashboard = true;
+showdashboard=true
+showadddvd = false;
 showCustomers = false;
 showInventory = false;
 
@@ -28,10 +29,17 @@ this.addDvdForm=this.fb.group({
 }
 
   // Toggle section visibility
-  dashboardShow() {
+  showadddvds() {
     this.resetSections();
-    this.showDashboard = true;
+    this.showadddvd = true;
   }
+
+//this is show admin home page
+  homepage(){
+this.resetSections();
+this.showdashboard=true
+  }
+
 
   customersShow() {
     this.resetSections();
@@ -45,9 +53,10 @@ this.addDvdForm=this.fb.group({
   }
 
   resetSections() {
-    this.showDashboard = false;
+    this.showadddvd = false;
     this.showCustomers = false;
     this.showInventory = false;
+    this.showdashboard=false;
   }
   reportsShow() {
     throw new Error('Method not implemented.');
@@ -61,9 +70,7 @@ this.addDvdForm=this.fb.group({
     displayRentals() {
     throw new Error('Method not implemented.');
     }
-    homepage() {
-    throw new Error('Method not implemented.');
-    }
+
 
     addDvd() {
       if (this.addDvdForm.valid) {
