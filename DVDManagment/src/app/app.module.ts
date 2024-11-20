@@ -13,24 +13,24 @@ import { ReviewComponent } from './review/review.component';
 import { CustomerComponent } from './customer/customer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { CustomersComponent } from './layout/admin/customers/customers.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 @NgModule({
   declarations: [
     AppComponent,
-
     AdminComponent,
     BlankComponent,
     LoginComponent,
     RegisterComponent,
     ReviewComponent,
     CustomerComponent,
-    CustomersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterOutlet,FormsModule,ReactiveFormsModule,CommonModule,RouterModule
+    RouterOutlet,FormsModule,ReactiveFormsModule,CommonModule,RouterModule, BrowserAnimationsModule,
+    BsDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
