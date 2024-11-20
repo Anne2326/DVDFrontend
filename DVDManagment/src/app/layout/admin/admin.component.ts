@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-admin',
@@ -6,16 +7,25 @@ import { Component } from '@angular/core';
   styleUrl: './admin.component.css'
 })
 export class AdminComponent {
+  addDvdForm: FormGroup;
 
 dvds: any[]=[];
 customers: any[]=[];
 
-
-
-
 showDashboard = true;
-  showCustomers = false;
-  showInventory = false;
+showCustomers = false;
+showInventory = false;
+
+constructor(private fb:FormBuilder){
+this.addDvdForm=this.fb.group({
+  title: ['', Validators.required],
+  director: ['', Validators.required],
+  category: ['', Validators.required],
+  releaseDate: ['', Validators.required],
+  quantity: [null, [Validators.required, Validators.min(1)]],
+  image: [null, Validators.required]
+})
+}
 
   // Toggle section visibility
   dashboardShow() {
@@ -31,6 +41,7 @@ showDashboard = true;
   displayDVDs() {
     this.resetSections();
     this.showInventory = true;
+    this.dvds=this.addDvdForm.value
   }
 
   resetSections() {
@@ -55,9 +66,21 @@ showDashboard = true;
     }
 
     addDvd() {
-      throw new Error('Method not implemented.');
+      if (this.addDvdForm.valid) {
+        const formData = this.addDvdForm.value;
+  
+        // Add the form data to the dvds array
+        this.dvds.push(formData);
+  
+        // Log the updated dvds array
+        console.log('DVDs Array:', this.dvds);
+  
+        // Optionally reset the form after submission
+        this.addDvdForm.reset();
+      } else {
+        console.error('Form is invalid');
       }
-
+    }
       editDvd(arg0: any) {
         throw new Error('Method not implemented.');
         }

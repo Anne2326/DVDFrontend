@@ -8,11 +8,7 @@ import { RegisterComponent } from './register/register.component';
 import { AdminComponent } from './layout/admin/admin.component';
 
 const routes: Routes = [
-  {path:'admin',component:AdminComponent, 
-    children:[{
-      path:'customer'
-    }]
-  },
+  {path:'admin',component:AdminComponent},
 
   {
     
