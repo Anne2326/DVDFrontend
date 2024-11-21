@@ -9,6 +9,7 @@ import { AdminComponent } from './layout/admin/admin.component';
 
 const routes: Routes = [
   {path:'admin',component:AdminComponent},
+  {path:'home',component:ReviewComponent},
 
   {
     
