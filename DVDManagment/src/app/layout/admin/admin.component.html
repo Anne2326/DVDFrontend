@@ -42,7 +42,11 @@
         <span class="flex">Flex</span>
       </h1>
     </a>
-    <button class="btn btn-outline-success" type="submit">LogOut</button>
+    <div>
+      <button type="button" class="btn m-3"><i class="bi bi-bell-fill"></i></button>
+      <button id="btn" class="btn btn-outline-success" type="submit" [routerLink]="['/home']">LogOut</button>
+    </div>
+    
   </div>
 </nav>
 
@@ -161,7 +165,7 @@
 
     <div class="container-fluid" *ngIf="showCustomers">
       <div class="card shadow-lg mt-4">
-        <div class="card-header bg-primary text-white">
+        <div class="card-header bg-danger text-white">
           Registered Customers
         </div>
         <div class="card-body">
@@ -246,7 +250,7 @@
 <!-- add dvd form  -->
     <div class="container-fluid" *ngIf="showadddvd">
       <div class="card shadow-lg mt-4">
-        <div class="card-header bg-primary text-white">Add DVD</div>
+        <div class="card-header bg-danger text-white">Add DVD</div>
         <div class="card-body">
           <form [formGroup]="addDvdForm" (ngSubmit)="addDvd()">
             <div class="mb-3">
