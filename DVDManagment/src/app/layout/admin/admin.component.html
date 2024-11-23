@@ -161,17 +161,30 @@
       </div>
     </div>
 
-    <!-- This is for showing Customer details for admin like custoomer report -->
-
     <div class="container-fluid" *ngIf="showCustomers">
-      <div class="card shadow-lg mt-4">
-        <div class="card-header bg-danger text-white">
-          Registered Customers
+      <div class="row mt-4">
+        <!-- Title Section -->
+        <div class="col-md-8">
+          <h1 class="text-danger">Registered Customers</h1>
         </div>
+    
+        <!-- Search Box Section -->
+        <div class="col-md-4 text-right">
+          <input 
+            type="text" 
+            class="form-control" 
+            placeholder="Search Customer..." 
+          />
+        </div>
+      </div>
+    
+      <!-- Customer Table Section -->
+      <div class="card shadow-lg mt-4">
         <div class="card-body">
           <table class="table table-striped">
             <thead>
               <tr>
+                <th>Id</th>
                 <th>Name</th>
                 <th>NIC</th>
                 <th>Email</th>
@@ -180,16 +193,18 @@
             </thead>
             <tbody>
               <tr *ngFor="let customer of customers">
+                <td>{{ customer.id }}</td>
                 <td>{{ customer.userName }}</td>
                 <td>{{ customer.nic }}</td>
                 <td>{{ customer.email }}</td>
-                <td>{{ customer.phone }}</td>
+                <td>{{ customer.phoneNumber }}</td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
     </div>
+    
 
 
 <!-- admin home page  -->
@@ -200,7 +215,7 @@
           <div class="col-4">
               <div class="card text-center text-white bg-primary shadow-lg p-4">
                   <h5>Number of Customers</h5>
-                  <p class="display-4">120</p>
+                  <p class="display-4">{{customers.length}}</p>
               </div>
           </div>
   
