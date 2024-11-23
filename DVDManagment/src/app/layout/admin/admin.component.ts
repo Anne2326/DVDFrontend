@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CustomerserviceService } from '../../customer/customerservice.service';
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.css'
 })
-export class AdminComponent {
+export class AdminComponent implements OnInit {
   addDvdForm: FormGroup;
 
 dvds: any[]=[];
@@ -17,7 +18,7 @@ showadddvd = false;
 showCustomers = false;
 showInventory = false;
 
-constructor(private fb:FormBuilder){
+constructor(private fb:FormBuilder,private customerservice:CustomerserviceService){
 this.addDvdForm=this.fb.group({
   title: ['', Validators.required],
   director: ['', Validators.required],
@@ -27,6 +28,9 @@ this.addDvdForm=this.fb.group({
   image: [null, Validators.required]
 })
 }
+  ngOnInit(): void {
+    this.loadcustomers()
+  }
 
   // Toggle section visibility
   showadddvds() {
@@ -44,6 +48,7 @@ this.showdashboard=true
   customersShow() {
     this.resetSections();
     this.showCustomers = true;
+
   }
 
   displayDVDs() {
@@ -71,6 +76,13 @@ this.showdashboard=true
     throw new Error('Method not implemented.');
     }
 
+
+    loadcustomers() {
+      this.customerservice.getcustomers().subscribe((data) => {
+        this.customers = data;
+        console.log(this.customers)
+      })
+    }
 
     addDvd() {
       if (this.addDvdForm.valid) {
