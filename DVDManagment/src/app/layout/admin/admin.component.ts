@@ -98,6 +98,7 @@ this.showdashboard=true
         const formData = this.addDvdForm.value;
 
         this.adminservice.createdvd(formData).subscribe(data=>{
+
         })
 
   
@@ -115,8 +116,14 @@ this.showdashboard=true
       editDvd(arg0: any) {
         throw new Error('Method not implemented.');
         }
-        deleteDvd(arg0: any) {
-        throw new Error('Method not implemented.');
+        deleteDvd(id:number) {
+          if(confirm('Do you want to delete?')) {
+            this.adminservice.deletedvd(id).subscribe(data => {        
+              this.loaddvds();
+            });
+          }
+
+          this.toastr.warning('Dvd  is deleted')
         }
 
 }
