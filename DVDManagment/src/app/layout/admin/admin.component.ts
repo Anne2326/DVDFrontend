@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CustomerserviceService } from '../../customer/customerservice.service';
+import { AdminService } from '../../services/admin.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-admin',
@@ -18,18 +20,19 @@ showadddvd = false;
 showCustomers = false;
 showInventory = false;
 
-constructor(private fb:FormBuilder,private customerservice:CustomerserviceService){
+constructor(private fb:FormBuilder,private customerservice:CustomerserviceService,private adminservice:AdminService,private toastr:ToastrService){
 this.addDvdForm=this.fb.group({
   title: ['', Validators.required],
   director: ['', Validators.required],
-  category: ['', Validators.required],
+  genre: ['', Validators.required],
   releaseDate: ['', Validators.required],
-  quantity: [null, [Validators.required, Validators.min(1)]],
-  image: [null, Validators.required]
+  copiesAvailable: [null, [Validators.required, Validators.min(1)]],
+  imageUrl: [null, Validators.required]
 })
 }
   ngOnInit(): void {
     this.loadcustomers()
+    this.loaddvds()
   }
 
   // Toggle section visibility
@@ -54,7 +57,6 @@ this.showdashboard=true
   displayDVDs() {
     this.resetSections();
     this.showInventory = true;
-    this.dvds=this.addDvdForm.value
   }
 
   resetSections() {
@@ -84,20 +86,30 @@ this.showdashboard=true
       })
     }
 
+    loaddvds(){
+      this.adminservice.getalldvds().subscribe((data)=>{
+        this.dvds=data;
+        console.log(this.dvds)
+      })
+    }
+
     addDvd() {
       if (this.addDvdForm.valid) {
         const formData = this.addDvdForm.value;
-  
-        // Add the form data to the dvds array
-        this.dvds.push(formData);
+
+        this.adminservice.createdvd(formData).subscribe(data=>{
+        })
+
   
         // Log the updated dvds array
         console.log('DVDs Array:', this.dvds);
+
+        this.toastr.success(`Dvd ${formData.title} Added successfully....`)
   
         // Optionally reset the form after submission
         this.addDvdForm.reset();
       } else {
-        console.error('Form is invalid');
+        this.toastr.error('Form is invalid');
       }
     }
       editDvd(arg0: any) {
