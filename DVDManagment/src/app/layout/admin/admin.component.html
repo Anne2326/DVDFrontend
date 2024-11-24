@@ -128,29 +128,20 @@
             </thead>
             <tbody>
               <tr *ngFor="let dvd of dvds">
+                <td>{{dvd.id}}</td>
                 <td>
-                  <img
-                    [src]="dvd.imageUrl"
-                    class="img-thumbnail"
-                    alt="{{ dvd.title }}"
-                  />
+                  <img [src]="'http://localhost:5276' + dvd.imageUrl" alt="DVD Image" width="80" height="90" />
                 </td>
                 <td>{{ dvd.title }}</td>
                 <td>{{ dvd.director }}</td>
                 <td>{{ dvd.releaseDate | date }}</td>
-                <td>{{ dvd.category }}</td>
-                <td>{{ dvd.quantity }}</td>
+                <td>{{ dvd.genre }}</td>
+                <td>{{ dvd.copiesAvailable }}</td>
                 <td>
-                  <button
-                    class="btn btn-sm btn-success"
-                    (click)="editDvd(dvd.id)"
-                  >
+                  <button class="btn btn-sm btn-success m-2" (click)="editDvd(dvd.id)">
                     Edit
                   </button>
-                  <button
-                    class="btn btn-sm btn-danger"
-                    (click)="deleteDvd(dvd.id)"
-                  >
+                  <button class="btn btn-sm btn-danger" (click)="deleteDvd(dvd.id)">
                     Delete
                   </button>
                 </td>
@@ -160,6 +151,7 @@
         </div>
       </div>
     </div>
+    
 
     <div class="container-fluid" *ngIf="showCustomers">
       <div class="row mt-4">
@@ -222,8 +214,8 @@
           <!-- Square 2: Number of Rentals -->
           <div class="col-4">
               <div class="card text-center text-white bg-success shadow-lg p-4">
-                  <h5>Number of Rentals</h5>
-                  <p class="display-4">85</p>
+                  <h5>Number of displayDVD</h5>
+                  <p class="display-4">{{dvds.length}}</p>
               </div>
           </div>
   
@@ -291,7 +283,7 @@
             <div class="mb-3">
               <label for="category" class="form-label">Category:</label>
               <input
-                formControlName="category"
+                formControlName="genre"
                 type="text"
                 class="form-control"
                 placeholder="Enter Category"
@@ -311,7 +303,7 @@
             <div class="mb-3">
               <label for="quantity" class="form-label">Quantity:</label>
               <input
-                formControlName="quantity"
+                formControlName="copiesAvailable"
                 type="number"
                 class="form-control"
                 placeholder="Enter Quantity"
@@ -322,7 +314,7 @@
               <label for="image" class="form-label">DVD Image</label>
               <input
                 type="file"
-                formControlName="image"
+                formControlName="imageUrl"
                 class="form-control"
                 required
               />
