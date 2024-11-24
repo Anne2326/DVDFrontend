@@ -15,4 +15,8 @@ export class AdminService {
   createdvd(dvd:any){
     return this.http.post('http://localhost:5276/api/Manager/AddDVD',dvd)
   }
+
+  deletedvd(id:number){
+    return this.http.delete('http://localhost:5276/api/Manager/'+id)
+  }
 }
