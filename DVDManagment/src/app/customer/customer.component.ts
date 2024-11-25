@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class CustomerComponent {
 
+  hide:boolean=false;
+  func(){
+    if (this.hide==false){
+      this.hide=true;
+    }
+    else{
+      this.hide =true
+    }
+  }
+
 }
