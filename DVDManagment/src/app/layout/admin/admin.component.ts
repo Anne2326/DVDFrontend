@@ -26,7 +26,7 @@ this.addDvdForm=this.fb.group({
   director: ['', Validators.required],
   genre: ['', Validators.required],
   releaseDate: ['', Validators.required],
-  copiesAvailable: [null, [Validators.required, Validators.min(1)]],
+  CopiesAvailable: [null, [Validators.required, Validators.min(1)]],
   imageUrl: [null, Validators.required]
 })
 }
@@ -93,26 +93,63 @@ this.showdashboard=true
       })
     }
 
+    // addDvd() {
+    //   if (this.addDvdForm.valid) {
+    //     const formData = this.addDvdForm.value;
+    //     console.log(formData.CopiesAvailable)
+
+    //     this.adminservice.createdvd(formData).subscribe(data=>{
+
+    //     })
+
+  
+    //     // Log the updated dvds array
+    //     console.log('DVDs Array:', this.dvds);
+
+    //     this.toastr.success(`Dvd ${formData.title} Added successfully....`)
+  
+    //     // Optionally reset the form after submission
+    //     this.addDvdForm.reset();
+    //   } else {
+    //     this.toastr.error('Form is invalid');
+    //   }
+    // }
+
     addDvd() {
       if (this.addDvdForm.valid) {
-        const formData = this.addDvdForm.value;
-
-        this.adminservice.createdvd(formData).subscribe(data=>{
-
-        })
-
-  
-        // Log the updated dvds array
-        console.log('DVDs Array:', this.dvds);
-
-        this.toastr.success(`Dvd ${formData.title} Added successfully....`)
-  
-        // Optionally reset the form after submission
-        this.addDvdForm.reset();
+        const formData = new FormData();
+        formData.append('title', this.addDvdForm.get('title')?.value);
+        formData.append('director', this.addDvdForm.get('director')?.value);
+        formData.append('genre', this.addDvdForm.get('genre')?.value);
+    
+        // Convert the releaseDate to ISO 8601 format
+        const releaseDate = new Date(this.addDvdForm.get('releaseDate')?.value);
+        formData.append('releaseDate', releaseDate.toISOString());
+    
+        formData.append('copiesAvailable', this.addDvdForm.get('CopiesAvailable')?.value);
+    
+        // Add file
+        const file = this.addDvdForm.get('imageUrl')?.value;
+        if (file && file.length > 0) {
+          formData.append('imageFile', file[0]);
+        }
+    
+        this.adminservice.createdvd(formData).subscribe(
+          (response) => {
+            console.log('DVD added successfully:', response);
+            this.toastr.success('DVD added successfully!');
+          },
+          (error) => {
+            console.error('Error adding DVD:', error);
+            this.toastr.error('Error adding DVD: ' + error.error);
+          }
+        );
       } else {
-        this.toastr.error('Form is invalid');
+        this.toastr.error('Please fill out the form correctly.');
       }
     }
+    
+    
       editDvd(arg0: any) {
         throw new Error('Method not implemented.');
         }
