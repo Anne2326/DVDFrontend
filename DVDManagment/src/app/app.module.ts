@@ -17,6 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { ToastrModule } from 'ngx-toastr';
 import { provideHttpClient } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { CustomerReviewComponent } from './customer-review/customer-review.component';
 
 
 @NgModule({
@@ -28,6 +30,8 @@ import { provideHttpClient } from '@angular/common/http';
     RegisterComponent,
     ReviewComponent,
     CustomerComponent,
+    HomeComponent,
+    CustomerReviewComponent,
   ],
   imports: [
     BrowserModule,

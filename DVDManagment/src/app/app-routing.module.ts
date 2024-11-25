@@ -6,10 +6,14 @@ import { ReviewComponent } from './review/review.component';
 import { CustomerComponent } from './customer/customer.component';
 import { RegisterComponent } from './register/register.component';
 import { AdminComponent } from './layout/admin/admin.component';
+import { HomeComponent } from './home/home.component';
+import { CustomerReviewComponent } from './customer-review/customer-review.component';
 
 const routes: Routes = [
   {path:'admin',component:AdminComponent},
   {path:'home',component:ReviewComponent},
+  {path:'Customerhome',component:HomeComponent},
+  {path:'customersReview',component:CustomerReviewComponent},
 
   {
     
