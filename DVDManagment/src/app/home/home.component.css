@@ -256,10 +256,16 @@ h1 {
 
 }
 
+.cards{
+  display: flex;
+  justify-content: flex-start;
+}
 
 
-
-
+.card-img-top{
+  height: 270px;
+ 
+}
 
 
 
