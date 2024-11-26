@@ -1,0 +1,99 @@
+
+<div class="header">
+
+    <nav class="navbar navbar-expand-lg navbar-scroll fixed-top shadow-0 border-bottom border-dark">
+        <div class="container">
+          <a class="navbar-brand" href="#!"><i class="fab fa-mdb fa-4x"></i></a>
+          <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+            data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/Customerhome']">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/customersReview']">Review</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" (click)="func()">Profile</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="#!">Log out</a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+    
+    </div>
+    <br>
+
+
+
+    <div *ngIf="hide">
+      <div class="container">
+        <form  class="model" >
+          <h1>Profile</h1>
+          <div class="form-group">
+            <label for="exampleInputPassword1">UserName</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">PhoneNumber</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter the PhoneNumber">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">NIC</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter the PhoneNumber">
+          </div>
+         
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-secondary">Close</button>
+        </form>
+    
+
+      </div>
+    
+
+  
+
+
+
+
+      
+    </div>
+       
+        <section class="rent" id="Rent" style="display: block;">
+            <h2 class="heading"> <span style="font-size: 40px;">Explore New DVDs Rent & Watch</span></h2>
+           <br>
+            <div class="search-filter">
+                <input type="text" id="searchInput" placeholder="Search for videos...">
+                <select id="genreFilter">
+                    <option value="">All Genres</option>
+                    <option value="action">Action</option>
+                    <option value="comedy">Comedy</option>
+                    <option value="drama">Drama</option>
+                </select>
+            </div>
+            <div id="videoList" class="video-list">
+                <!-- Videos will be dynamically inserted here -->
+            </div>
+            <div class="rent-container" id="rent-container">
+                <!-- Cards will be inserted here -->
+    
+    
+    
+                
+            </div>
+        </section>
