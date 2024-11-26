@@ -1,0 +1,66 @@
+
+<nav class="navbar  border-bottom border-body" data-bs-theme="dark" style="background-color: rgb(4, 4, 43);">
+    <div class="container-fluid d-flex justify-content-between">
+      <a class="navbar-brand d-flex" href="#">
+        <img
+          src="reelbox.jpg"
+          alt="Logo"
+          width="60"
+          height="50"
+          class="d-inline-block align-text-top"
+        />
+        <h1>
+          <span class="cine p-1">Cine</span>
+          <span class="flex">Flix</span>
+        </h1>
+      </a>
+      <div>
+        <button type="button" class="btn m-3"><i class="bi bi-bell-fill"></i></button>
+        <button id="btn" class="btn btn-outline-light" type="submit" [routerLink]="['']">LogOut</button>
+      </div>
+      
+    </div>
+  </nav>
+  
+  <main class="d-flex flex-nowrap">
+  
+    <div
+      class="d-flex flex-column flex-shrink-0 p-3  "
+      style="width: 280px ;background-color: rgb(4, 4, 43);height: 650px;"
+    >
+      <a
+        href="/"
+        class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+      >
+        <svg class="bi pe-none me-2" width="40" height="32">
+          <use xlink:href="#bootstrap"></use>
+        </svg>
+        <span class="fs-4">Menu</span>
+      </a>
+      <hr />
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <button class="btn text-white" >
+            <i class="bi bi-house"></i> Home
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn text-white" >
+            <i class="bi bi-plus-circle"></i> Review
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn text-white" >
+            <i class="bi bi-people"></i> Profile
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn text-white">
+            <i class="bi bi-collection"></i> AddComment
+          </button>
+        </li>
+       
+      </ul>
+    </div>
+  
+   
