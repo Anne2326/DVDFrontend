@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 function emailContainsAt(control: AbstractControl) {
   const email = control.value;
@@ -18,55 +20,56 @@ function emailContainsAt(control: AbstractControl) {
   styleUrl: './register.component.css'
 })
 export class RegisterComponent implements OnInit {
-loginForm: FormGroup;
+  loginForm: FormGroup;
 
 
-constructor(private fb:FormBuilder){
-this.loginForm=new FormGroup({
-  username:new FormControl(""),
-  password:new FormControl(""),
-  phonenumber:new FormControl(""),
-  nic:new FormControl(""),
-  email:new FormControl(""),
-
-
-
-
-})
+  constructor(private fb: FormBuilder, public toastr: ToastrService,public router:Router ) {
+    this.loginForm = new FormGroup({
+      username: new FormControl(""),
+      password: new FormControl(""),
+      phonenumber: new FormControl(""),
+      nic: new FormControl(""),
+      email: new FormControl(""),
 
 
 
-}
+
+    })
+
+
+
+  }
   ngOnInit(): void {
-    
-this.loginForm=this.fb.group({
+
+    this.loginForm = this.fb.group({
 
 
-  username:['',Validators.required],
+      username: ['', Validators.required],
 
-  password:['',[Validators.required,
-    Validators.minLength(6),
-    Validators.maxLength(6)
+      password: ['', [Validators.required,
+      Validators.minLength(6),
+      Validators.maxLength(6)
 
-  ]
-  
-],
-  phonenumber:['',[Validators.required,
-    Validators.minLength(10),
-    Validators.maxLength(10)
+      ]
 
-  ]],
-  nic:['',[Validators.required,
-    Validators.maxLength(10),
-    Validators.minLength(10)
-  ]
-],
+      ],
+      phonenumber: ['', [Validators.required,
+     
+      Validators.maxLength(10),
+      Validators.minLength(10) //this validation not display in users check that
 
-  email:['',[Validators.required,
-    emailContainsAt
-  ]]
- 
-})
+      ]],
+      nic: ['', [Validators.required,
+      Validators.maxLength(10),
+      Validators.minLength(10)
+      ]
+      ],
+
+      email: ['', [Validators.required,
+        emailContainsAt
+      ]]
+
+    })
 
 
 
@@ -74,19 +77,17 @@ this.loginForm=this.fb.group({
 
   }
 
-  onSubmit(){
+  onSubmit() {
+    if (this.loginForm.valid) {
+      // Show success toastr message
+      this.toastr.success("Form Submitted", "Success");
 
-
-    if(this.loginForm.valid){
-      console.log('Form Submitted',this.loginForm.value);
+      // Navigate to the customer page
+      this.router.navigate(['/customer']);
+    } else {
+      // Handle form validation failure if necessary
+      this.toastr.error("Please fill in the form correctly", "Error");
     }
-
-else{
-  console.log('Form is not valid');
-}
-
-
-
   }
 
 

@@ -1,158 +1,66 @@
-<div class="header">
 
-<nav class="navbar navbar-expand-lg navbar-scroll fixed-top shadow-0 border-bottom border-dark">
-    <div class="container">
-      <a class="navbar-brand" href="#!"><i class="fab fa-mdb fa-4x"></i></a>
-      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
-        data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#!">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#!">Review</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#!">Profile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#!">Add_Comments</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#!">Log out</a>
-          </li>
-          
-        </ul>
+<nav class="navbar  border-bottom border-body" data-bs-theme="dark" style="background-color: rgb(4, 4, 43);">
+    <div class="container-fluid d-flex justify-content-between">
+      <a class="navbar-brand d-flex" href="#">
+        <img
+          src="reelbox.jpg"
+          alt="Logo"
+          width="60"
+          height="50"
+          class="d-inline-block align-text-top"
+        />
+        <h1>
+          <span class="cine p-1">Cine</span>
+          <span class="flex">Flix</span>
+        </h1>
+      </a>
+      <div>
+        <button type="button" class="btn m-3"><i class="bi bi-bell-fill"></i></button>
+        <button id="btn" class="btn btn-outline-light" type="submit" [routerLink]="['']">LogOut</button>
       </div>
+      
     </div>
   </nav>
-
-
-</div>
-<br>
-
-
-    <section class="rent" id="Rent" style="display: block;">
-        <h2 class="heading"> <span style="font-size: 40px;">Explore New DVDs Rent & Watch</span></h2>
-       <br>
-        <div class="search-filter">
-            <input type="text" id="searchInput" placeholder="Search for videos...">
-            <select id="genreFilter">
-                <option value="">All Genres</option>
-                <option value="action">Action</option>
-                <option value="comedy">Comedy</option>
-                <option value="drama">Drama</option>
-            </select>
-        </div>
-        <div id="videoList" class="video-list">
-            <!-- Videos will be dynamically inserted here -->
-        </div>
-        <div class="rent-container" id="rent-container">
-            <!-- Cards will be inserted here -->
-
-
-
-            
-        </div>
-    </section>
-    
-
-
-
-
-
-
-
-
-
-
-<br>
-
-<section class="  p-4" id="reviews">
- 
-    <h1 class="text-white">Our Customer Review </h1>
-
-<div class="container text-white">
-    <div class="reviews-container">
-        <div class="box">
-            <div class="rev-img">
-                <img src="OIP.jpg" alt=""  style="border-radius: 50%; width: 150px;height: 150px;">
-            </div>
-            <h3>Confusius Anushiyan</h3>
-            <div class="stars">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-half"></i>
-            </div>
-            <p>I love this DVD rental service because it offers a huge selection of movies, including many
-                hard-to-find classics. The DVDs arrive on time, and they are in good condition. I also appreciate
-                their excellent customer support. If I ever have a problem, they're quick to resolve it. My only
-                complaint is that they don’t always have the latest releases right away, but I can usually find
-                something to watch. Overall, it's still a great service for movie lovers like me.</p>
-        </div>
-
-</div>
-<div class="container text-white">
-    <div class="box">
-        <div class="rev-img">
-            <img src=" OIP3.jpg" alt="" style="border-radius: 50%; width: 150px;height: 150px;">
-        </div>
-        <h3> Selventhiran AnneTharsana</h3>
-        <div class="stars">
-            <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-               
-        </div>
-        <p>As someone with a packed schedule, I don’t have time to stream movies online or deal with buffering
-            issues. Renting DVDs is convenient for me because I can watch them at my own pace. I really like
-            that this service lets me keep the DVDs for a few days before returning them. The downside is that
-            the subscription plans are a bit pricey, especially when I don’t always have time to watch every
-            movie I rent. Still, it’s useful for people who want flexibility.</p>
+  
+  <main class="d-flex flex-nowrap">
+  
+    <div
+      class="d-flex flex-column flex-shrink-0 p-3  "
+      style="width: 280px ;background-color: rgb(4, 4, 43);height: 650px;"
+    >
+      <a
+        href="/"
+        class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+      >
+        <svg class="bi pe-none me-2" width="40" height="32">
+          <use xlink:href="#bootstrap"></use>
+        </svg>
+        <span class="fs-4">Menu</span>
+      </a>
+      <hr />
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <button class="btn text-white" >
+            <i class="bi bi-house"></i> Home
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn text-white" >
+            <i class="bi bi-plus-circle"></i> Review
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn text-white" >
+            <i class="bi bi-people"></i> Profile
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn text-white">
+            <i class="bi bi-collection"></i> AddComment
+          </button>
+        </li>
+       
+      </ul>
     </div>
-
-</div>
-    <div class="container text-white">
-        <div class="box">
-            <div class="rev-img">
-                <img src="OIP2.jpg" alt=""  style="border-radius: 50%; width: 150px;height: 150px;" >
-            </div>
-            <h3> Sri.Thusiyanthi </h3>
-            <div class="stars">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-half"></i>
-            </div>
-            <p>I’m not a huge movie fan, but I use the DVD rental service occasionally when I want to have a movie
-                night with friends or family. The service is easy to use, and they have a decent collection of
-                popular titles. I wish there were more deals or discounts for casual renters like me, but overall,
-                it’s a convenient option when I want to rent something. I probably won’t subscribe regularly, but
-                it’s good for occasional use.</p>
-        </div>
-    </div>
-    </div>
+  
    
-</section>
-<div class="div-footer">
-    <footer class="footer text-white">
-        <div class="footer-item">
-            <p>Email:-CineFlix&#64;gmail.com</p>
-        </div>
-        <div class="footer-item">
-            <p><i class="bi bi-c-circle"></i>All Rights Reserved by CineFlix 2024</p>
-        </div>
-        <div class="footer-item">
-            <p>Contactus:-0712345678</p>
-        </div>
-    </footer>
-</div>

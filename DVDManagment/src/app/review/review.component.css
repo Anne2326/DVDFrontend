@@ -34,7 +34,7 @@ body {
   .hero-content h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
-  margin-top: 150px;
+ 
   
   }
   
@@ -59,7 +59,19 @@ body {
   .btn-signin:hover {
     background-color: darkred;
   }
-  
+  .btn-get{
+    position: absolute;
+    color: white;
+    font-size: 1.75rem;
+    background-color: red;
+    height: 65px;
+    width: 230px;
+    border-radius: 8px;
+    margin-left: 65px;
+    
+    display: inline-block;
+
+  }
   
   .carousel-container {
     margin-top: 50px;
@@ -77,10 +89,10 @@ body {
     overflow-x: auto;
     gap: 25px;
     padding: 50px;
-    margin-left: 5px;
     cursor: pointer;
     /* cursor: -webkit-zoom-out; */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* margin-right:5px ; */
   }
   
 
@@ -92,6 +104,7 @@ body {
     background: #fff;
     text-align: center;
     padding: 0.75px;
+  
   }
   
   .image-card img {
@@ -150,7 +163,8 @@ body {
   }
   #reviews{
   
-    background: linear-gradient(to bottom, #13043e, #0a0303);
+    background: radial-gradient(circle, rgb(10, 2, 49) 30%, black 90%);
+
     
   }
   /* General section styling */
@@ -193,11 +207,12 @@ body {
     text-align: center;
     color:white;
    /* Smooth transition for hover effect */
-  }
-  .box:hover{
    
   }
-
+  .box:hover{
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
   /* Review image styles */
   .rev-img img {
     border-radius: 50%;
@@ -312,3 +327,55 @@ transform: scale(1.05);
 box-shadow: 0 12px 24px rgba(112, 104, 104, 0.4);
 
   }
+  .form-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 3px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    height: 65px;
+    margin: auto;
+    margin-left: 420px;
+
+}
+
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    background-color: transparent;
+    border: 1px solid #555;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    height: 60px;
+    margin-right:20px;
+}
+.form-control:focus {
+    outline: none;
+    border-color: #656362; /* Red when focused */
+}
+.form-control::placeholder {
+    color:lightgray; 
+   font-size: 20px;
+}
+.form-check-input {
+    margin-right: 20px;
+    
+}
+
+
+
+
+
+
+.form-overlay {
+  position: relative;
+}
+ .input-container {
+  position: relative;
+  display: flex;
+  align-items: center;      
+}  
+

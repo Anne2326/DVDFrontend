@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators,FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder,private router:Router) {
+  constructor(private fb: FormBuilder,private router:Router,private toastr:ToastrService) {
 
 this.loginForm=new FormGroup({
   username:new FormControl(""),
@@ -50,11 +51,12 @@ this.loginForm=new FormGroup({
 
     if(this.loginForm.valid){
 
-      console.log('Form Submitted',this.loginForm.value);
+      this.toastr.success("Login Successfully","Success");
+      
     }
 
     else{
-      console.log('Form is not  valid');
+      this.toastr.warning("UserName or Password Incorrect","Warning");
     }
   }
 

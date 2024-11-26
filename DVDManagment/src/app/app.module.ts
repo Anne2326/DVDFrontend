@@ -13,6 +13,9 @@ import { ReviewComponent } from './review/review.component';
 import { CustomerComponent } from './customer/customer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ToastrModule } from 'ngx-toastr';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,8 @@ import { CommonModule } from '@angular/common';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterOutlet,FormsModule,ReactiveFormsModule,CommonModule,RouterModule
+    BrowserAnimationsModule,
+    RouterOutlet,FormsModule,ReactiveFormsModule,CommonModule,RouterModule,ToastrModule.forRoot(),BsDatepickerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
